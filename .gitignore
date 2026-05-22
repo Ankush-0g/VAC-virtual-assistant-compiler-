@@ -1,0 +1,11 @@
+.gradle/
+.idea/
+build/
+local.properties
+
+BACKUP SOFTWARE INTER DTREG MS-25 120824/
+caches/
+.tmp/
+daemon/
+native/
+.kotlin/
