@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="saveBtn" type="id" />
+    <item name="outputText" type="id" />
+    <item name="runBtn" type="id" />
+    <item name="loadBtn" type="id" />
+    <item name="languageSpinner" type="id" />
+    <item name="codeEditor" type="id" />
+</resources>

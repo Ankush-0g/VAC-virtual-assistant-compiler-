@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- UI Colors matched to provided image -->
+    <color name="bg_navy">#121721</color>
+    <color name="surface_navy">#1A222E</color>
+    <color name="purple_accent">#8B5CF6</color>
+    <color name="editor_text">#E1E1E1</color>
+    <color name="gutter_text">#555555</color>
+    <color name="hint_text">#444444</color>
+    <color name="text_gray">#888888</color>
+    <color name="terminalGreen">#00FF00</color>
+
+    <!-- Compatibility/Legacy (mapped to the new palette) -->
+</resources>

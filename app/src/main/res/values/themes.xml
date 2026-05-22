@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CodeCompiler" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Professional Gray Dark UI by default -->
+        <item name="android:windowBackground">#1A1A1A</item>
+        <item name="backgroundColor">#1A1A1A</item>
+        <item name="surfaceColor">#2D2D2D</item>
+        <item name="codeEditorBg">#2D2D2D</item>
+        <item name="codeEditorText">#E1E1E1</item>
+        <item name="lineNumbersBg">#2D2D2D</item>
+        <item name="lineNumbersText">#666666</item>
+        <item name="spinnerTextColor">#E1E1E1</item>
+        <item name="purple_accent">#8B5CF6</item>
+
+        <!-- Use modern popup menu styles -->
+        <item name="popupMenuStyle">@style/CustomPopupMenuStyle</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/CustomPopupMenuTextAppearance</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/CustomPopupMenuTextAppearance</item>
+    </style>
+
+    <style name="Theme.CodeCompiler" parent="Base.Theme.CodeCompiler" />
+
+    <!-- Splash Screen Theme -->
+    <style name="SplashTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@android:color/black</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@android:color/transparent</item>
+    </style>
+
+    <!-- Modern CSS-like Popup Menu Design -->
+    <style name="CustomPopupMenuStyle" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_spinner_popup</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+    </style>
+
+    <!-- Custom text style for popup items -->
+    <style name="CustomPopupMenuTextAppearance" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">#E1E1E1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <attr name="backgroundColor" format="color" />
+    <attr name="surfaceColor" format="color" />
+    <attr name="codeEditorBg" format="color" />
+    <attr name="codeEditorText" format="color" />
+    <attr name="lineNumbersBg" format="color" />
+    <attr name="lineNumbersText" format="color" />
+    <attr name="spinnerTextColor" format="color" />
+    <attr name="purple_accent" format="color" />
+</resources>

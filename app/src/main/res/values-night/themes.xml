@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CodeCompiler" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Professional Gray Dark Mode Colors -->
+        <item name="android:windowBackground">#1A1A1A</item>
+        <item name="backgroundColor">#1A1A1A</item>
+        <item name="surfaceColor">#2D2D2D</item>
+        <item name="codeEditorBg">#2D2D2D</item>
+        <item name="codeEditorText">#E1E1E1</item>
+        <item name="lineNumbersBg">#2D2D2D</item>
+        <item name="lineNumbersText">#666666</item>
+        <item name="spinnerTextColor">#E1E1E1</item>
+    </style>
+</resources>

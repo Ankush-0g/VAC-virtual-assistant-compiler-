@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_navy"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_vac_logo"
+                android:contentDescription="VAC Icon" />
+
+            <ImageView
+                android:id="@+id/titleLogo"
+                android:layout_width="146dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="-56dp"
+                android:contentDescription="VAC Text Logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vac_text_logo" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="@color/purple_accent"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp">
+
+            <Spinner
+                android:id="@+id/languageSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@android:color/transparent"
+                android:popupBackground="@drawable/bg_spinner_popup"
+                android:dropDownVerticalOffset="40dp" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- Code Editor Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editorCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/errorLayout"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/surface_navy"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lineNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp"
+                    android:background="@color/surface_navy"
+                    android:fontFamily="monospace"
+                    android:gravity="end"
+                    android:text="1"
+                    android:textColor="@color/gutter_text"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/codeEditor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:padding="16dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="monospace"
+                    android:hint="Type your code here..."
+                    android:textColor="@color/editor_text"
+                    android:textColorHint="@color/hint_text"
+                    android:textSize="14sp"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+
+            <!-- Styled Menu Icon inside the editor -->
+            <ImageButton
+                android:id="@+id/settingsBtn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_utility_button"
+                android:src="@drawable/ic_menu"
+                android:scaleType="centerInside"
+                android:padding="6dp"
+                app:tint="@color/white" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Error Message Display -->
+    <LinearLayout
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/inputCardView"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_error_block"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:id="@+id/errorHeaderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/errorHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Syntax Error"
+                android:textColor="#FF5252"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E0E0E0"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp" />
+    </LinearLayout>
+
+    <!-- Bottom Section -->
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/undoRedoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true">
+
+            <ImageButton
+                android:id="@+id/undoBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_circle_black"
+                android:src="@drawable/ic_undo"
+                android:scaleType="centerInside"
+                android:layout_marginEnd="12dp"
+                android:padding="8dp"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/redoBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_circle_black"
+                android:src="@drawable/ic_redo"
+                android:scaleType="centerInside"
+                android:padding="8dp"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/runBtn"
+            android:layout_width="100dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:text="Run"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:backgroundTint="@color/purple_accent"
+            app:cornerRadius="12dp" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/inputCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLayout"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/surface_navy"
+        app:cardCornerRadius="8dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Input (stdin)..."
+            android:textColor="@color/editor_text"
+            android:textColorHint="@color/text_gray"
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:minLines="1"
+            android:maxLines="5"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Invisible buttons for functionality compatibility -->
+    <Button android:id="@+id/saveBtn" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <Button android:id="@+id/loadBtn" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+</RelativeLayout>
